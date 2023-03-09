@@ -16,7 +16,7 @@ public class HelloServlet extends GenericServlet {
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
 		out.println("<body>");
-		out.println("<h3> Hello world form java servlet");
+		out.println("<h3> Hello world form java servlet</h3>");
 		out.println("</body>");
 		out.println("</html>");
 	}

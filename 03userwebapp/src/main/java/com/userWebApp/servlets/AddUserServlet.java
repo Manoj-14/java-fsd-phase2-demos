@@ -47,6 +47,7 @@ public class AddUserServlet extends HttpServlet {
 			} else {
 				out.println("<h1>Error in creating user</h1>");
 			}
+			out.println("<a href=\"index.html\">Home</a>");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

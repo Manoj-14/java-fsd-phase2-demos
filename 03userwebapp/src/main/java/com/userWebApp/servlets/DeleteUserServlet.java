@@ -40,6 +40,7 @@ public class DeleteUserServlet extends HttpServlet {
 			}else {
 				out.println("<h1>Error in deleting user</h1>");
 			}
+			out.println("<a href=\"index.html\">Home</a>");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

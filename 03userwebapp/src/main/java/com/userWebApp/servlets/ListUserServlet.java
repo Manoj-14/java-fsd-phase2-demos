@@ -7,6 +7,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,16 +17,21 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.sql.Statement;
 
-@WebServlet("/listUserServlet")
+@WebServlet("/listUserServlet") // when it is present it will not go to web.xml
 public class ListUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Connection connection;
 
-	public void init() {
+	public void init(ServletConfig config) {
+		
 		try {
+			ServletContext context = config.getServletContext();
+			String dburl = context.getInitParameter("dburl");
+			String dbuser = context.getInitParameter("dbuser");
+			String dbpassword = context.getInitParameter("dbpassword");
 			Class.forName("com.mysql.jdbc.Driver");
-			// statically mentioning connection url in all class
-			connection = DriverManager.getConnection("jdbc:mysql://localhost/newdb", "root", "root");
+//			 Fetching from web.xml
+			connection = DriverManager.getConnection(dburl, dbuser, dbpassword);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {

@@ -7,6 +7,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,15 +20,19 @@ public class AddUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Connection connection;
 
-	public void init() {
+	public void init(ServletConfig config) {
+
 		try {
+			ServletContext context = config.getServletContext();
+			String dburl = context.getInitParameter("dburl");
+			String dbuser = context.getInitParameter("dbuser");
+			String dbpassword = context.getInitParameter("dbpassword");
 			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost/newdb", "root", "root");
+//			 Fetching from web.xml
+			connection = DriverManager.getConnection(dburl, dbuser, dbpassword);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

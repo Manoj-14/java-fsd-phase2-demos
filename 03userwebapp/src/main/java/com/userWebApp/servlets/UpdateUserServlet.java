@@ -7,6 +7,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,10 +20,16 @@ public class UpdateUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Connection connection;
 
-	public void init() {
+	public void init(ServletConfig config) {
+
 		try {
+			ServletContext context = config.getServletContext();
+			String dburl = context.getInitParameter("dburl");
+			String dbuser = context.getInitParameter("dbuser");
+			String dbpassword = context.getInitParameter("dbpassword");
 			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost/newdb", "root", "root");
+//			 Fetching from web.xml
+			connection = DriverManager.getConnection(dburl, dbuser, dbpassword);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
@@ -35,7 +43,8 @@ public class UpdateUserServlet extends HttpServlet {
 		String password = request.getParameter("password");
 
 		try (Statement statement = connection.createStatement();) {
-			int result = statement.executeUpdate("update users set password ='" + password + "'where email ='"+email+"'");
+			int result = statement
+					.executeUpdate("update users set password ='" + password + "'where email ='" + email + "'");
 			PrintWriter out = response.getWriter();
 			if (result > 0) {
 				out.println("<h1>User data updated in db</h1>");

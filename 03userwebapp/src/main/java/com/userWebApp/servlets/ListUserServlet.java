@@ -23,6 +23,7 @@ public class ListUserServlet extends HttpServlet {
 	public void init() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
+			// statically mentioning connection url in all class
 			connection = DriverManager.getConnection("jdbc:mysql://localhost/newdb", "root", "root");
 		} catch (SQLException e) {
 			e.printStackTrace();

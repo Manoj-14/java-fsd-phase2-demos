@@ -76,7 +76,7 @@ public class AddProductServlet extends HttpServlet {
 			return false;
 		} else if (isNumber) {
 			try {
-				Integer intValye = Integer.parseInt(inputValue);
+				Integer intValue = Integer.parseInt(inputValue);
 				return true;
 			} catch (NumberFormatException nfe) {
 				System.out.println(nfe.getMessage());

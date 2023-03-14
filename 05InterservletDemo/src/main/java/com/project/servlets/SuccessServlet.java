@@ -18,7 +18,8 @@ public class SuccessServlet extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html");
 		PrintWriter out = resp.getWriter();
-		out.println("<h4> Welcome " + req.getParameter("username") + " login successful at " + new Date()+"</h4>");
+		out.println("<h4 style='color:green;text-align:center;'> Welcome " + req.getAttribute("firstname")
+				+ " login successful at " + new Date() + "</h4>");
 	}
 
 }

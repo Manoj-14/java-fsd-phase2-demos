@@ -65,7 +65,7 @@ public class LoginController extends HttpServlet {
 				session.setAttribute("email",email);
 				response.addCookie(new Cookie("status", "loggedin"));
 				dispatcher = request.getRequestDispatcher("home");
-				dispatcher.include(request, response);
+				dispatcher.forward(request, response);
 			} else {
 				dispatcher = request.getRequestDispatcher("login.html");
 				response.setContentType("text/html");

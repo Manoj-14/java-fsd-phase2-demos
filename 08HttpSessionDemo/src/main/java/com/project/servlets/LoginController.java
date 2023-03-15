@@ -13,6 +13,7 @@ import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -62,8 +63,9 @@ public class LoginController extends HttpServlet {
 				request.setAttribute("firstname", rs.getString(1));
 				HttpSession session = request.getSession();
 				session.setAttribute("email",email);
+				response.addCookie(new Cookie("status", "loggedin"));
 				dispatcher = request.getRequestDispatcher("home");
-				dispatcher.forward(request, response);
+				dispatcher.include(request, response);
 			} else {
 				dispatcher = request.getRequestDispatcher("login.html");
 				response.setContentType("text/html");

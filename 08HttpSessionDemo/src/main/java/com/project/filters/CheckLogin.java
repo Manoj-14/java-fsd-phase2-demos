@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet Filter implementation class CheckLogin
  */
-@WebFilter({ "/loginServlet", "/home" })
+//@WebFilter({ "/loginServlet", "/home" })
 public class CheckLogin extends HttpFilter implements Filter {
 
 	public void destroy() {

@@ -27,8 +27,8 @@ pageContext.setAttribute("myStudents", students);
 		</tr>
 		<c:forEach var="student" items="${myStudents}">
 			<tr>
-				<th>${student.getFirstname()}</th>
-				<th>${student.getLastname()}</th>
+				<td>${student.firstname}</td>
+				<td>${student.lastname}</td>
 			</tr>
 		</c:forEach>
 	</table>

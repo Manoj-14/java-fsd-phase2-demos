@@ -6,3 +6,4 @@
 - for using tags need to import library: `<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>`
 - For using variables or objects you need to add it for `pageContext` 
 - you can access the private variables of the class by there name because JSP converts it to getters and setters(getters and setters should decleared in class)
+- For function use `<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>`

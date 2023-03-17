@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.project.utils.StudentsDataUtils;
 
 @WebServlet("/StudentsList")
-public class StudentsList extends HttpServlet {
+public class StudentsController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Connection connection;
 	StudentsDataUtils studentsDataUtils;

@@ -7,22 +7,27 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.sql.DataSource;
+import javax.xml.crypto.Data;
+
 import com.mysql.cj.x.protobuf.MysqlxConnection.Close;
 import com.project.resources.model.Student;
 
 public class StudentsDataUtils {
 
-	Connection con = null;
-	Statement statement = null;
-	ResultSet rs = null;
-	List<Student> students = new ArrayList<>();
+	private DataSource dataSource;
 
-	public StudentsDataUtils(Connection con) {
-		this.con = con;
+	public StudentsDataUtils(DataSource dataSource) {
+		this.dataSource = dataSource;
 	}
 
 	public List<Student> getStudents() {
+		Statement statement = null;
+		ResultSet rs = null;
+		Connection con = null;
+		List<Student> students = new ArrayList<>();
 		try {
+			con = this.dataSource.getConnection();
 			statement = con.createStatement();
 			rs = statement.executeQuery("Select * from student order by id");
 			while (rs.next()) {

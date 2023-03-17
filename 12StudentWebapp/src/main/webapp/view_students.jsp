@@ -13,12 +13,14 @@
 	<h2>Students list</h2>
 	<table border="1" style="border-collapse:collapse">
 		<tr>
+			<th>Id</th>
 			<th>FirstName</th>
 			<th>LastName</th>
 			<th>Email</th>
 		</tr>
 		<c:forEach var="user" items="${students}">
 			<tr>
+				<td>${user.id}</td>
 				<td>${user.first_name}</td>
 				<td>${user.last_name}</td>
 				<td>${user.email}</td>

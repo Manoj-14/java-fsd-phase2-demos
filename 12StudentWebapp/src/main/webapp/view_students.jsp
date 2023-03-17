@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h2>Students list</h2>
-	<table border="1" style="border-collapse:collapse">
+	<table border="1" style="border-collapse: collapse">
 		<tr>
 			<th>Id</th>
 			<th>FirstName</th>
@@ -20,11 +20,13 @@
 		</tr>
 		<c:forEach var="user" items="${students}">
 			<tr>
-				<td>${user.id}</td>
+				<td><a href="UpdateStudent?studentId=${user.id}">${user.id}</a></td>
 				<td>${user.first_name}</td>
 				<td>${user.last_name}</td>
 				<td>${user.email}</td>
+				<td><a href="DeleteStudent?studentId=${user.id}" > Delete</a></td>
 			</tr>
 		</c:forEach>
+	</table>
 </body>
 </html>

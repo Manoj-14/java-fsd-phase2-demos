@@ -8,8 +8,8 @@
 <title>Update Student</title>
 </head>
 <body>
-	<form action="UpdateStudent" method="post">
-		
+	<h2>Update Student</h2>
+	<form action="UpdateStudent" method="post">		
 		Id(Can't Edit):<input type="text" value="${student.id}" name="id" readonly="true"/> <br/>
 		Firstname: <input type="text" value="${student.first_name}" name="firstname"/><br/>
 		Lastname: <input type="text" value="${student.last_name}" name="lastname"/><br/>

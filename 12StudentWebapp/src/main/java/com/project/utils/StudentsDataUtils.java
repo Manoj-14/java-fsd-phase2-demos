@@ -146,5 +146,30 @@ public class StudentsDataUtils {
 		}
 	}
 
-}
+	public void addStudent(String firstname, String lastname, String email) {
+		Connection con = null;
+		PreparedStatement ps = null;
 
+		try {
+			con = this.dataSource.getConnection();
+			ps = con.prepareStatement("insert into student(first_name,last_name,email) values (?,?,?)");
+			ps.setString(1, firstname);
+			ps.setString(2, lastname);
+			ps.setString(3, email);
+			ps.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (con != null) {
+					con.close();
+					ps.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+	}
+
+}

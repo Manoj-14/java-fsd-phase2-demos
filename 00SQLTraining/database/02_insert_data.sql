@@ -11,3 +11,19 @@ insert into person(firstname,lastname,dob,notes,salary) values("Sohan","G","2001
 insert into roles values(1,"Team lead");
 insert into roles values(2,"Tester");
 insert into roles values(3,"Developer");
+
+
+insert into manager(name) values("Manager 1");
+insert into manager(name) values("Manager 2");
+insert into manager(name) values("Manager 3");
+insert into manager(name) values("Manager 4");
+
+insert into team(name,empId,mgrId) values("team 1",1,1);
+insert into team(name,empId,mgrId) values("team 1",3,1);
+insert into team(name,empId,mgrId) values("team 1",7,1);
+
+
+insert into team(name,empId,mgrId) values("team 2",2,3);
+insert into team(name,empId,mgrId) values("team 2",4,3);
+insert into team(name,empId,mgrId) values("team 2",6,3);
+

@@ -10,3 +10,7 @@ where firstname ="Darshan";
 update person
 set salary = 10000
 where firstname ="Mohan";
+
+update person
+set salary=10000
+where firstname = "karthik";

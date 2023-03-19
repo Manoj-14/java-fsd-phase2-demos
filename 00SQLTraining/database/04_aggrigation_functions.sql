@@ -12,3 +12,12 @@ select min(salary) from person;
 select min(firstname) from person;
 
 select max(firstname) from person;
+
+select * from person where left(firstname,1) = "M"
+UNION ALL
+select * from person where left(lastname,1) = "V"
+ORDER BY firstname asc;
+
+select id,firstname from person
+union
+select * from roles;

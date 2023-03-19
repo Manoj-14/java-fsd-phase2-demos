@@ -10,3 +10,8 @@ create table person(
 	created timestamp DEFAULT CURRENT_TIMESTAMP
 );
 
+create table Roles(
+	id int ,
+	role varchar(30),
+	foreign key (id) REFERENCES Person(id)
+);

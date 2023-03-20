@@ -11,6 +11,10 @@ insert into person(firstname,lastname,dob,notes,salary) values("Sohan","G","2001
 insert into roles values(1,"Team lead");
 insert into roles values(2,"Tester");
 insert into roles values(3,"Developer");
+insert into roles values(4,"DevOps");
+insert into roles values(5,"Scrum master");
+insert into roles values(6,"Trinee");
+insert into roles values(7,"Hr");
 
 
 insert into manager(name) values("Manager 1");

@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author manm
+ *
+ */
+module hibernateHelloWorld {
+}

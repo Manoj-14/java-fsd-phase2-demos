@@ -11,22 +11,26 @@
 - add all jars from classpath and done
 
 - Creating object mapping file ,Example file is below `message.hmb.xml`:
-	`<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC 
- "-//HIBERNATE/HIBERNATE MAPPING DTD 3.0//EN"
- "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
- 
-<hibernate-mapping>
- <class name="Message" table="message">
-  <id name="id" column="id">
-   <generator class="native" />
-  </id>
-  <property name="text" column="text" type="string" />
- </class>
-</hibernate-mapping>`
+
+
+	<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE hibernate-mapping PUBLIC 
+	 "-//HIBERNATE/HIBERNATE MAPPING DTD 3.0//EN"
+	 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	 
+	<hibernate-mapping>
+	 <class name="Message" table="message">
+	  <id name="id" column="id">
+	   <generator class="native" />
+	  </id>
+	  <property name="text" column="text" type="string" />
+	 </class>
+	</hibernate-mapping>
 
 - Creating Hibernate configuration file, Example file is below `hibernate-config.xml`:
-	`<?xml version="1.0" encoding="UTF-8"?>
+
+
+	<?xml version="1.0" encoding="UTF-8"?>
 	<!DOCTYPE hibernate-configuration PUBLIC 
 	 "-//HIBERNATE/HIBERNATE Configuration DTD 3.0//EN"
 	 "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
@@ -45,4 +49,4 @@
 	 
 	 </session-factory>
 	
-	</hibernate-configuration>`
+	</hibernate-configuration>

@@ -50,3 +50,6 @@
 	 </session-factory>
 	
 	</hibernate-configuration>
+	
+### Key points
+- Hibernate works on session so 

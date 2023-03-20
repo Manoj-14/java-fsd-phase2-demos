@@ -52,4 +52,4 @@
 	</hibernate-configuration>
 	
 ### Key points
-- Hibernate works on session so 
+- Hibernate works on session so first create a session

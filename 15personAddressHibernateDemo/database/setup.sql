@@ -5,6 +5,4 @@ create table message(
 	text varchar(50)
 );
 
-select * from message;
-
 select * from myPerson;

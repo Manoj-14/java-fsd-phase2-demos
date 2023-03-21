@@ -1,5 +1,6 @@
 package com.hibernateDemo.domine;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,17 +19,21 @@ public class Student {
 	@Column(name="enrollment_id")
 	private String enrollmentid;
 	
-	@ManyToOne
+	@ManyToOne(cascade = {CascadeType.PERSIST , CascadeType.REMOVE})
 	@JoinColumn(name  ="guide_id")
 	private Guide guide;
 	
 	private String name;
+
+	public Student() {
+	}
 
 	public Student(String enrollmentid, Guide guide, String name) {
 		this.enrollmentid = enrollmentid;
 		this.guide = guide;
 		this.name = name;
 	}
+	
 	
 	
 }

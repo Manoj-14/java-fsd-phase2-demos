@@ -1,20 +1,23 @@
 package com.hibernateDemo;
 
-
-import com.hibernateDemo.domine.Address;
-import com.hibernateDemo.domine.Person;
-import com.hibernateDemo.utils.HibernateUtil;
 import org.hibernate.Session;
+
+import com.hibernateDemo.domine.Guide;
+import com.hibernateDemo.domine.Student;
+import com.hibernateDemo.utils.HibernateUtil;
 
 public class HibernateDemo {
 	public static void main(String[] args) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		session.beginTransaction();
-		Address shippingAddress = new Address("VVCE", "Mysore", "570002");
-		Address bilingAddress = new Address("Mahishi", "Thirthalli", "577232");
-		Person person = new Person("Manoj", shippingAddress,bilingAddress);
-		
-		session.save(person);
+
+		Guide guide = new Guide("STFF01", "Mike Lawson", 50000);
+		Student student1 = new Student("STU01", guide, "Manoj");
+		Student student2 = new Student("STU02", guide, "Mohan");
+
+		session.save(guide);
+		session.save(student1);
+		session.save(student2);
 		session.getTransaction().commit();
 		session.close();
 	}

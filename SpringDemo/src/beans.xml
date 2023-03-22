@@ -6,8 +6,12 @@
 
 
 	<!-- Setter Injection -->
-    <bean class="com.transferobject.Hello">
-    	<property name="message" value="Welcome to string"></property>
+    <bean class="com.transferobject.Hello" id="h1">
+    	<property name="message" value="Welcome to string 1"></property>
+    </bean>
+    <!--Multiple Setter Injection my adding id-->
+    <bean class="com.transferobject.Hello" id="h2">
+    	<property name="message" value="Welcome to string 2"></property>
     </bean>
 
 </beans>

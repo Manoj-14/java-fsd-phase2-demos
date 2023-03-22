@@ -1,4 +1,4 @@
-package com.transferobject;
+package com.to;
 
 public class Hello {
 	private String message;

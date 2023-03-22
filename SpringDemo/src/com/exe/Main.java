@@ -1,16 +1,19 @@
-package com.controller;
+package com.exe;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.to.Employee;
-import com.to.Hello;
+import com.to.SomeBO;
 
-public class SpringMain {
+public class Main {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-		
-		Employee e2 = (Employee) context.getBean("e2");
-		System.out.println(e2);
+		SomeBO bo = context.getBean("proxy",SomeBO.class);
+		bo.Validate();
+		try {
+			bo.Validate(17);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 	}
 }

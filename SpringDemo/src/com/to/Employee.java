@@ -1,4 +1,4 @@
-package com.transferobject;
+package com.to;
 
 public class Employee {
 	private int empId;

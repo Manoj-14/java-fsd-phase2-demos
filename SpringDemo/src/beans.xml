@@ -2,28 +2,28 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd 
+        http://www.springframework.org/schema/aop 
+   		http://www.springframework.org/schema/aop/spring-aop.xsd ">
 
 
-	<!-- Setter Injection -->
-	<bean class="com.transferobject.Hello" id="h1">
-		<property name="message" value="Welcome to string 1"></property>
-	</bean>
-	<!--Multiple Setter Injection my adding id -->
-	<bean class="com.transferobject.Hello" id="h2">
-		<property name="message" value="Welcome to string 2"></property>
-	</bean>
-
-	<bean class="com.transferobject.Employee" id="e1">
-		<property name="empId" value="12345"></property>
-		<property name="name" value="Manoj"></property>
-	</bean>
-
-	<!-- Constructor injection -->
-
-	<bean class="com.transferobject.Employee" id="e2">
-		<constructor-arg name="empId" value="5678"></constructor-arg>
-		<constructor-arg name="name" value="Mohan"></constructor-arg>
+	<bean id="bo" class="com.to.SomeBO"></bean>
+	
+	<bean id="ba" class="com.aops.BeforeAdvisor"></bean>
+	<bean id="aa" class="com.aops.AfterAdvisor"></bean>
+	<bean id="bh" class="com.aops.BothAdvisor"></bean>
+	<bean id="ea" class="com.aops.ExceptionAdvisor"></bean>
+	
+	<bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="bo"></property>
+		<property name="interceptorNames">
+			<list>
+				<value>bh</value>
+				<value>ea</value>
+			</list>
+		</property>
+		
 	</bean>
 
 </beans>

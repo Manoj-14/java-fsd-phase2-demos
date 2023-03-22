@@ -73,5 +73,7 @@
 	<classpathentry kind="lib" path="C:/Users/manm/Downloads/spring-framework-5.3.9/libs/spring-websocket-5.3.9.jar"/>
 	<classpathentry kind="lib" path="C:/Users/manm/Downloads/spring-framework-5.3.9/libs/spring-websocket-5.3.9-javadoc.jar"/>
 	<classpathentry kind="lib" path="C:/Users/manm/Downloads/spring-framework-5.3.9/libs/spring-websocket-5.3.9-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/manm/Downloads/aspectj-1.9.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/manm/Downloads/aspectj-weaver.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

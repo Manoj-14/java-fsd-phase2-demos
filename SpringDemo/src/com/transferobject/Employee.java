@@ -8,6 +8,12 @@ public class Employee {
 		System.out.println("Default constructor called");
 	}
 
+	public Employee(int empId, String name) {
+		System.out.println("Parameterised constructor called");
+		this.empId = empId;
+		this.name = name;
+	}
+
 	public int getEmpId() {
 		return empId;
 	}

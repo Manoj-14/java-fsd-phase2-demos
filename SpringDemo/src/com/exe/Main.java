@@ -8,10 +8,10 @@ import com.to.SomeBO;
 public class Main {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-		SomeBO bo = context.getBean("proxy",SomeBO.class);
+		SomeBO bo = (SomeBO)  context.getBean("bo");
 		bo.Validate();
 		try {
-			bo.Validate(17);
+			bo.Validate(19);
 		} catch (Exception e) {
 			System.out.println(e);
 		}

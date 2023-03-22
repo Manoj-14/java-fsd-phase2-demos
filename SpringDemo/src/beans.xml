@@ -10,20 +10,8 @@
 
 	<bean id="bo" class="com.to.SomeBO"></bean>
 	
-	<bean id="ba" class="com.aops.BeforeAdvisor"></bean>
-	<bean id="aa" class="com.aops.AfterAdvisor"></bean>
-	<bean id="bh" class="com.aops.BothAdvisor"></bean>
-	<bean id="ea" class="com.aops.ExceptionAdvisor"></bean>
+	<bean id="bd" class="com.to.CentralAOPAspect"></bean>
 	
-	<bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
-		<property name="target" ref="bo"></property>
-		<property name="interceptorNames">
-			<list>
-				<value>bh</value>
-				<value>ea</value>
-			</list>
-		</property>
-		
-	</bean>
+	<bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator" ></bean>
 
 </beans>

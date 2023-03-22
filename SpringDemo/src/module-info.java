@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author manm
- *
- */
-module SpringDemo {
-}

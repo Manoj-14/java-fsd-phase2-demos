@@ -75,5 +75,6 @@
 	<classpathentry kind="lib" path="lib/spring-websocket-5.3.9.jar"/>
 	<classpathentry kind="lib" path="lib/spring-websocket-5.3.9-javadoc.jar"/>
 	<classpathentry kind="lib" path="lib/spring-websocket-5.3.9-sources.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-j-8.0.32.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

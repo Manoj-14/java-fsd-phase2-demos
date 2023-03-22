@@ -13,5 +13,10 @@
     <bean class="com.transferobject.Hello" id="h2">
     	<property name="message" value="Welcome to string 2"></property>
     </bean>
+    
+    <bean class="com.transferobject.Employee" id="e1">
+    	<property name="empId" value="12345"></property>
+    	<property name="name" value="Manoj"></property>
+    </bean>
 
 </beans>
